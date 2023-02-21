@@ -1,0 +1,1 @@
+import palavras from "../palavras";
