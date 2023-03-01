@@ -45,10 +45,10 @@ export function Jogo  ({jogoIniciado,
             <img src={imagemForca[quantidadeErros]} alt={`Forca com ${quantidadeErros} erro(s)`} />
             <div className="palavra">
                 <button type="button" onClick={() => setPalavraSelecionada(escolherPalavra)}>Escolher Palavra</button>
-                <h1>
+                <h1 className={condicaoVitoria() ? "vitoria" : condicaoDerrota() && "derrota"}>
                 {palavraSelecionada.map((letra) => (
                     <>
-                        {letrasSelecionadas.includes(letra) ? letra : "_"}
+                        {letrasSelecionadas.includes(letra) || condicaoDerrota() ? letra : "_"}
                     </>
                 ))}
                 </h1>
