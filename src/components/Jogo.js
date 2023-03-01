@@ -3,11 +3,25 @@ import React from 'react';
 import imagemForca from "../imagemForca";
 import palavras from "../palavras";
 
-export function Jogo({palavraSelecionada, setPalavraSelecionada, letrasSelecionadas, quantidadeErros, setQuantidadeErros}) {
+export function Jogo  ({jogoIniciado, 
+                        setJogoIniciado, 
+                        palavraSelecionada, 
+                        setPalavraSelecionada, 
+                        letrasSelecionadas, 
+                        setLetrasSelecionadas, 
+                        quantidadeErros, 
+                        setQuantidadeErros}) {
 
     console.log(palavraSelecionada);
 
+    function iniciarJogo() {
+        setJogoIniciado(true);
+        setLetrasSelecionadas([]);
+        setQuantidadeErros(0);
+    }
+
     function escolherPalavra() {
+        iniciarJogo();
         const palavra = palavras[Math.floor(Math.random() * palavras.length)];
         return Array.from(palavra);
     }
