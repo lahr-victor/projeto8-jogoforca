@@ -1,14 +1,19 @@
 import React from 'react';
 
 import imagemForca from "../imagemForca";
+import palavras from "../palavras";
 
-export function Jogo({quantidadeErros, setQuantidadeErros}) {
+function escolherPalavra() {
+    return palavras[Math.floor(Math.random() * palavras.length)]
+}
+
+export function Jogo({palavraSelecionada, setPalavraSelecionada, letrasSelecionadas, letLetrasSelecionadas, quantidadeErros, setQuantidadeErros}) {
     return (
         <div className="jogo">
             <img src={imagemForca[quantidadeErros]} alt={`Forca com ${quantidadeErros} erro(s)`} />
             <div className="palavra">
-                <button type="button">Escolher Palavra</button>
-                <h1>palavra</h1>
+                <button type="button" onClick={() => setPalavraSelecionada(escolherPalavra)}>Escolher Palavra</button>
+                <h1>{palavraSelecionada}</h1>
             </div>
         </div>
     );
