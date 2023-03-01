@@ -41,10 +41,16 @@ export function Jogo  ({setJogoIniciado,
 
     return (
         <div className="jogo">
-            <img src={imagemForca[quantidadeErros]} alt={`Forca com ${quantidadeErros} erro(s)`} />
+            <img src={imagemForca[quantidadeErros]} alt={`Forca com ${quantidadeErros} erro(s)`} data-test="game-image"/>
             <div className="palavra">
-                <button type="button" onClick={() => setPalavraSelecionada(escolherPalavra)}>Escolher Palavra</button>
-                <h1 className={condicaoVitoria() ? "vitoria" : condicaoDerrota() ? "derrota" : ""}>
+                <button 
+                type="button" 
+                onClick={() => setPalavraSelecionada(escolherPalavra)}
+                data-test="choose-word"
+                >
+                    Escolher Palavra
+                </button>
+                <h1 className={condicaoVitoria() ? "vitoria" : condicaoDerrota() ? "derrota" : ""} data-test="word">
                 {palavraSelecionada.map((letra) => (
                     <>
                         {letrasSelecionadas.includes(letra) || condicaoDerrota() ? letra : "_"}
