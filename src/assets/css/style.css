@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@700&family=Roboto:wght@700&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+div.jogo {
+    width: 1025px;
+    margin: 0 auto;
+    padding: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+div.jogo img {
+    width: 400px;
+    height: auto;
+}
+
+div.jogo div.palavra {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+div.jogo div.palavra button {
+    width: 200px;
+    height: 60px;
+    background-color: #27AE60;
+    border: none;
+    border-radius: 8px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    color: #FFFFFF;
+    cursor: pointer;
+}
+
+div.jogo div.palavra h1 {
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: 700;
+    font-size: 50px;
+    letter-spacing: 20px;
+    color: #000000;
+}
+
+div.jogo div.palavra h1.vitoria {
+    color: #27AE60;
+
+}
+
+div.jogo div.palavra h1.derrota {
+    color: #FF0000;
+}
+
+div.letras {
+    width: 1025px;
+    margin: 0 auto;
+    padding: 0 150px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+div.letras button {
+    margin: 6px;
+    width: 40px;
+    height: 40px;
+    background-color: #E1ECF4;
+    border: 1px solid #7AA7C7;
+    border-radius: 3px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    color: #39739D;
+    cursor: pointer;
+}
+
+div.letras button:disabled {
+    background-color: #9FAAB5;
+    color: #798A9F;
+    cursor: default;
+}

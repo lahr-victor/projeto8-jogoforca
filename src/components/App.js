@@ -1,5 +1,8 @@
 import React from "react";
 
+import "../assets/css/reset.css";
+import "../assets/css/style.css";
+
 import { Jogo } from "./Jogo";
 import { Letras } from "./Letras";
 
@@ -14,7 +17,6 @@ export function App() {
     return (
         <>
             <Jogo 
-            jogoIniciado = {jogoIniciado}
             setJogoIniciado = {setJogoIniciado}
             palavraSelecionada = {palavraSelecionada}
             setPalavraSelecionada = {setPalavraSelecionada}

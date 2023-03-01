@@ -23,7 +23,7 @@ export function Letras({jogoIniciado,
                 onClick={() => selecionarLetra(letra)}
                 disabled={(!jogoIniciado || letrasSelecionadas.includes(letra) || jogoFinalizado ? true : false)}
                 >
-                    {letra}
+                    {letra.toUpperCase()}
                 </button>
             ))}            
         </div>
