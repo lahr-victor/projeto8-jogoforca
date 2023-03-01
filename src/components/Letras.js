@@ -1,8 +1,17 @@
 import alfabeto from "../alfabeto";
 
-export function Letras({jogoIniciado, letrasSelecionadas, setLetrasSelecionadas}) {
+export function Letras({jogoIniciado, 
+                        palavraSelecionada, 
+                        letrasSelecionadas, 
+                        setLetrasSelecionadas,
+                        quantidadeErros, 
+                        setQuantidadeErros,
+                        jogoFinalizado}) {
+
+
 
     function selecionarLetra(letra) {
+        !palavraSelecionada.includes(letra) && setQuantidadeErros(quantidadeErros + 1);
         setLetrasSelecionadas([...letrasSelecionadas, letra]);
     }
 
@@ -12,7 +21,7 @@ export function Letras({jogoIniciado, letrasSelecionadas, setLetrasSelecionadas}
                 <button 
                 type="button" 
                 onClick={() => selecionarLetra(letra)}
-                disabled={(!jogoIniciado || letrasSelecionadas.includes(letra) ? true : false)}
+                disabled={(!jogoIniciado || letrasSelecionadas.includes(letra) || jogoFinalizado ? true : false)}
                 >
                     {letra}
                 </button>

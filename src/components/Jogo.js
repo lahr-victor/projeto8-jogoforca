@@ -10,7 +10,8 @@ export function Jogo  ({jogoIniciado,
                         letrasSelecionadas, 
                         setLetrasSelecionadas, 
                         quantidadeErros, 
-                        setQuantidadeErros}) {
+                        setQuantidadeErros,
+                        setJogoFinalizado}) {
 
     console.log(palavraSelecionada);
 
@@ -18,12 +19,25 @@ export function Jogo  ({jogoIniciado,
         setJogoIniciado(true);
         setLetrasSelecionadas([]);
         setQuantidadeErros(0);
+        setJogoFinalizado(false);
     }
 
     function escolherPalavra() {
         iniciarJogo();
         const palavra = palavras[Math.floor(Math.random() * palavras.length)];
         return Array.from(palavra);
+    }
+
+    function condicaoVitoria() {
+        return (palavraSelecionada.every(letra => letrasSelecionadas.includes(letra)));           
+    }
+
+    function condicaoDerrota() {
+        return (quantidadeErros === 6);
+    }
+
+    if (condicaoVitoria() || condicaoDerrota()) {
+        setJogoFinalizado(true);
     }
 
     return (
